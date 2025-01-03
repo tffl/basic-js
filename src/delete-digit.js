@@ -15,7 +15,7 @@ function deleteDigit(n) {
   let maxnum = 0;
   const numArray = Array.from(n.toString());
   for (let i = 0; i < numArray.length; i += 1) {
-    let testNum = Number(numArray.toSpliced(i, 1).join(''));
+    let testNum = Number(numArray.slice(0, i).concat(numArray.slice(i + 1)).join(''));
     if (testNum > maxnum) {
       maxnum = testNum;
     }
